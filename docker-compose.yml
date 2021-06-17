@@ -14,8 +14,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.3
-          memory: 50M
+          cpus: "0.3"
+          memory: "50M"
 
   redis:
     image: redis:alpine
@@ -26,8 +26,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.3
-          memory: 50M
+          cpus: "0.3"
+          memory: "50M"
 
   mongo:
     image: mvertes/alpine-mongo
@@ -38,9 +38,9 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 0.3
-          memory: 300M
-      
+          cpus: "0.3"
+          memory: "300M"
+
 volumes:
   mongodata:
   pgdata:
