@@ -11,6 +11,11 @@ services:
       - "pgdata:/var/lib/postgresql/data"
     ports:
       - 5432:5432
+    deploy:
+      resources:
+        limits:
+          cpus: 0.3
+          memory: 50M
 
   redis:
     image: redis:alpine
@@ -18,6 +23,11 @@ services:
       - "redisdata:/data"
     ports:
       - 6379:6379
+    deploy:
+      resources:
+        limits:
+          cpus: 0.3
+          memory: 50M
 
   mongo:
     image: mvertes/alpine-mongo
@@ -25,6 +35,12 @@ services:
       - "mongodata:/data/db"
     ports:
       - 27017:27017
+    deploy:
+      resources:
+        limits:
+          cpus: 0.3
+          memory: 300M
+      
 volumes:
   mongodata:
   pgdata:
